@@ -130,8 +130,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'fname' => [
+            'required' => 'This :attribute is requried',
         ],
     ],
 

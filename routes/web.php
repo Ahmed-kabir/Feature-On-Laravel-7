@@ -19,4 +19,16 @@ Route::get('/', function () {
 
 Route::get('/login','Login@index');
 Route::get('/register','Login@register');
+Route::get('/logout','Login@logout');
+Route::post('/loginVerify','Login@loginVerify');
+
+
 Route::post('/save/userinfo','Login@saveUser');
+Route::post('/setPasswordForsession','Login@setPasswordForsession');
+Route::post('/checkPasswordForsession','Login@checkPasswordForsession');
+
+Route::group(['middleware'=>['Login']],function(){
+
+Route::get('/dashboard','Login@dashboard');
+
+});
