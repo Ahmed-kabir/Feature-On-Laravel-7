@@ -53,8 +53,9 @@
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">File Upload</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                    <a class="nav-link" href="{{url('add-file')}}">File Upload</a>
+                                    <a class="nav-link" href="{{url('add-excel')}}">Excel Upload</a>
+                                    <a class="nav-link" href="{{url('/manage-file')}}">Manage File</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
@@ -99,7 +100,7 @@
             <div id="layoutSidenav_content">
                 
 
-
+                @yield('main')
 
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">

@@ -23,12 +23,19 @@ Route::get('/logout','Login@logout');
 Route::post('/loginVerify','Login@loginVerify');
 
 
+
 Route::post('/save/userinfo','Login@saveUser');
 Route::post('/setPasswordForsession','Login@setPasswordForsession');
 Route::post('/checkPasswordForsession','Login@checkPasswordForsession');
 
 Route::group(['middleware'=>['Login']],function(){
-
 Route::get('/dashboard','Login@dashboard');
 
 });
+
+Route::get('/add-file','FileController@addFile');
+Route::post('/save-file','FileController@saveFile');
+Route::get('/manage-file','FileController@manageFile');
+Route::get('/download-file/{id}','FileController@downloadFile');
+Route::get('/add-excel','FileController@addExcel');
+Route::post('/save-excel','FileController@saveExcel');

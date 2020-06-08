@@ -93,7 +93,7 @@ class Login extends Controller
     public function dashboard()
     {
          $data['title'] = 'Admin Dashboard';
-         return view('admin_dashboard', $data);
+         return view('main_content', $data);
     }
 
     public function logout(Request $request)
