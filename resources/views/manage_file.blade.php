@@ -1,9 +1,12 @@
 @extends('admin_dashboard')
 @section('main')
 <div class="card mb-4">
+
                             <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+                            <a href="{{ url('/exportpdf') }}">Export PDF</a>
                             <div class="card-body">
                                 <div class="table-responsive">
+
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>

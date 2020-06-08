@@ -8,6 +8,7 @@ use DB;
 use Storage;
 use Response;
 use Maatwebsite\Excel\Excel;
+use PDF;
 // use Illuminate\Support\Facades\Crypt;
 
 class FileController extends Controller
@@ -114,6 +115,24 @@ class FileController extends Controller
       }
      }
      return back()->with('message', 'Excel Data Imported successfully.');
+    }
+
+    public function exportpdf()
+    {
+                $data['title'] = 'Manage File';
+        $data['images'] = DB::table('images')->get();
+
+    // Send data to the view using loadView function of PDF facade
+
+    $pdf = \PDF::loadView('manage_file', $data);
+
+    // If you want to store the generated pdf to the server then you can use the store function
+
+    // $pdf->save(storage_path().'_filename.pdf');
+
+    // Finally, you can download the file using download function
+
+    return $pdf->download('manage_file.pdf');
     }
     
 

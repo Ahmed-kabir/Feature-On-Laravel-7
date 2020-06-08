@@ -39,3 +39,4 @@ Route::get('/manage-file','FileController@manageFile');
 Route::get('/download-file/{id}','FileController@downloadFile');
 Route::get('/add-excel','FileController@addExcel');
 Route::post('/save-excel','FileController@saveExcel');
+Route::get('/exportpdf','FileController@exportpdf');
